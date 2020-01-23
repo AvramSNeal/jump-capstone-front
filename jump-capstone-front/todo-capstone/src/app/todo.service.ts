@@ -23,7 +23,7 @@ export class TodoService {
 
 
   public findAll() : Observable<Todo[]>
-    {
+  {
     return this.http.get<Todo[]>(this.url);
   }
 

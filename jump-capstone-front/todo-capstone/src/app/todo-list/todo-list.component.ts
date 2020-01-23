@@ -13,13 +13,20 @@ export class TodoListComponent implements OnInit {
 
   todos: Todo [];
   errorMessage: string;
+  currentUser: string;
 
   constructor(private todoService: TodoService,  private route: ActivatedRoute, private router: Router
-    ) { this.errorMessage = '';}
+    ) { this.errorMessage = ''; this.currentUser='ACTIVE';}
 
   ngOnInit()
   {
     this.todoService.findAll().subscribe ( data => { this.todos = data } , error => this.errorMessage = 'Cannot connect to database!'  );
+  }
+
+  toggleTodoStatus(t: Todo)
+  {
+    t.status = !t.status;
+    this.todoService.updateTodo(t).subscribe(data => {});
   }
 
   deleteTodo(id: number)

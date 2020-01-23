@@ -33,6 +33,16 @@
           <div [hidden]="!date.pristine" class="alert alert-danger">Date must be in the future</div>
       </div>
 
+      <div class="form-group">
+        <label for="priority">Task Priority</label>
+        <div>
+        <input type="radio" [(ngModel)]="todo.priority" name="priority" value="1" required #priority="ngModel"> 🟢 Low Priority 🟢<br>
+        <input type="radio" [(ngModel)]="todo.priority" name="priority" value="2" required #priority="ngModel"> ⚠️ Medium Priority ⚠️<br>
+        <input type="radio" [(ngModel)]="todo.priority" name="priority" value="3" required #priority="ngModel"> 🚨 High Priority 🚨<br>
+        <div [hidden]="!priority.pristine" class="alert alert-danger">Select a priority level for the task</div>
+        </div>
+      </div>
+
       <button type="submit" [disabled]="!todoForm.form.valid"
         class="btn btn-info">Submit</button>
     </form>
