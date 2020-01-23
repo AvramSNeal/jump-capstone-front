@@ -1,0 +1,42 @@
+
+
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="todo.description"
+          minlength="5"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder={{todo.description}}
+          required #name="ngModel"
+          >
+      </div>
+      <!-- [hidden]="!name.pristine" -->
+      <div  *ngIf="name.errors?.minlength" class="alert alert-danger">Name must be atleast 5 characters</div>
+
+
+
+      <div class="form-group">
+        <label for="date">Date</label>
+
+        <input type="date"
+            [(ngModel)]="todo.targetDate"
+            class="form-control"
+            id="date"
+            name="date"
+            min={{minDate}}
+            placeholder={{todo.targetDate}}
+            required #date="ngModel">
+          <div [hidden]="!date.pristine" class="alert alert-danger">Date must be in the future</div>
+      </div>
+
+      <button type="submit" [disabled]="!todoForm.form.valid"
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+<hr> {{errorMessage}}

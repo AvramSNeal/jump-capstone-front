@@ -1,0 +1,40 @@
+.card-body{
+  background-color:black;
+
+}
+
+.btn-info{
+  background-color: black;
+  color: white;
+  margin-right: 15px;
+
+  border-color: yellow;
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.btn-info:hover{
+  background-color: gold;
+}
+
+.btn-outline-primary{
+  color: white;
+  border-color: yellow;
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.btn-outline-primary:hover{
+  background-color: gold;
+}
+
+
+
+.navbar {
+  z-index: 1;
+}
+
+
+

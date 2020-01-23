@@ -1,0 +1,30 @@
+<!-- <div class="card my-5"> -->
+  <!-- <div class="card-body"> -->
+    <!-- <table class="table table-dark table-striped"> -->
+    <table class="table table-dark table-striped" >
+      <thead class="thead-dark">
+        <tr align="center" class="success">
+          <th scope="col" width="5%">Priority</th>
+          <th scope="col" >Task Name</th>
+          <th scope="col" >Due Date</th>
+          <th scope="col"  width="10%">Status</th>
+          <th colspan="2"  width="10%">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos" >
+          <td align="center" *ngIf="todo.priority == 1"> 🟢 </td>
+          <td align="center" *ngIf="todo.priority == 2"> ⚠️ </td>
+          <td align="center" *ngIf="todo.priority == 3"> 🚨 </td>
+          <td align="left">{{ todo.description }}</td>
+          <td align="center">{{ todo.targetDate }}</td>
+          <td align="center">{{ todo.status }}</td>
+          <td align="center"><a [routerLink]="['/edit', todo.id]" class="btn btn-success">Edit</a></td>
+          <td align="center"><a (click) = "deleteTodo(todo.id)" class="btn btn-secondary">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- </div> -->
+<!-- </div> -->
+
+<hr> {{errorMessage}}
