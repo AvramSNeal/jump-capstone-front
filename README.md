@@ -1,9 +1,5 @@
-# jump-capstone-front
-The Front-End section of the final project. Team "The Boys" Java JuMP Capstone Project. Utilizing Angular for the front-end and Spring Boot for the back-end.
-
-# TodoCapstone
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+# JuMP Capstone Back-End Application
+This is the front-end application of Team **The Boys**' Java JuMP Capstone Project. It utilizes **Angular** for the front-end and **Spring Boot** for the back-end with **MySQL** as the database.
 
 ## Development server
 
